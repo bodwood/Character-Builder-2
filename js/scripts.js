@@ -1,39 +1,21 @@
-// Buisness Logic
+function handleWarrior(event) {
+  event.preventDefault();
 
-function warrior() {
+  let shaqWarrior = document.querySelector("div#shaqWarrior");
+  let height = document.getElementById("height").value;
+  const operator = document.querySelector("input[name='operator']:checked").value;
 
+  shaqWarrior.setAttribute("class", "hidden");
 
-  document.getElementById("reveal2").setAttribute('class', 'hidden');
-  const name = document.getElementById('name').value;
-  const height = document.getElementById("height").value;
-  const class1 = document.querySelector("input[name='operator']:checked").value;
-  const dob = document.getElementById("dob").value;
-  const color = document.getElementById("color").value;
-
-
-  // UI Logic
-  let result;
-  if (height === 'shaq' && class1 === 'warrior') {
-    result = document.removeAttribute("hidden");
-  } else if (height === 'shaq' && class1 === 'magic') {
-    result = document.removeAttribute('hidden');
-  } else if (height === 'shaq' && class1 === 'archery') {
-    result = document.removeAttribute('hidden');
+  if(height === 'shaq' && operator === 'warrior'){
+    shaqWarrior.removeAttribute('class','hidden');
+  } else if(){
+    
   }
-
-
+  // the code to get and process form values will go here!
 }
 
-
-
-
-
-
-
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
   const form = document.getElementById("character");
-  form.addEventListener("submit", function(e){
-    e.preventDefault(); 
-    warrior();
-  });
+  form.addEventListener("submit", handleWarrior);
 });
